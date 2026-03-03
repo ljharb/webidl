@@ -14909,9 +14909,11 @@ has its \[[Prototype]] [=/internal slot=] set to the intrinsic object {{%Error.p
 as defined in the [=create an interface prototype object=] abstract operation.
 It also has an \[[ErrorData]] slot, like all built-in exceptions.
 
-Additionally, if an implementation gives native {{Error}} objects special powers or
-nonstandard properties (such as a <code>stack</code> property),
-it should also expose those on {{DOMException}} objects.
+Since {{DOMException}} objects have an \[[ErrorData]] slot, the
+<code>Error.prototype.stack</code> accessor and other {{Error}}-related behaviors
+gated on \[[ErrorData]] apply to them. Additionally, if an implementation gives
+native {{Error}} objects other special powers or nonstandard properties, it should
+also expose those on {{DOMException}} objects.
 
 <h4 id="js-exception-objects" oldids="es-exception-objects" dfn>Exception objects</h4>
 
